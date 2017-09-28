@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "Package: lab5\nType: Package\nTitle: Visual Interaction Tool For Swedish Election Results\nVersion: 0.1.0\nAuthor: Simon Jonsson, Fanny Karelius\nMaintainer: Simon Jonsson <simjo241@liu.se>, Fanny Karelius <fanka300@liu.se>\nDescription: Implements an interactive tool for the Swedish election results where you can\n            see the results for each muniplicity. The default select is Stockholms Kommun.\nLicense: GPL-3\nEncoding: UTF-8\nLazyData: true\nDepends: R (>= 2.1.0)\nImports: methods\n",
+    "created" : 1506607578605.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3585651310",
+    "id" : "DE25E7EB",
+    "lastKnownWriteTime" : 1506609009,
+    "last_content_update" : 1506609009590,
+    "path" : "~/lab5/DESCRIPTION",
+    "project_path" : "DESCRIPTION",
+    "properties" : {
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "dcf"
+}

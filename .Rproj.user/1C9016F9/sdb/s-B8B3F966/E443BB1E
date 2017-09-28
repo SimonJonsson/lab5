@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "library(shiny)\nrequire(readxl)\n\nsheet <- read_excel(\"~/lab5/data/2014_riksdagsval_per_valdistrikt.xls\")\nviz <- elect_viz$new(data = sheet)\n\nui <- fluidPage(\n  titlePanel(\"Swedish Election Results\"),\n  sidebarLayout(\n    sidebarPanel(\n      selectInput(inputId = \"muni\", label = strong(\"Trend index\"),\n                  choices = viz$get_muniplicites(),\n                  selected = viz$get_muniplicity())\n    ),\n    mainPanel(\n      plotOutput(outputId = \"distPlot\")\n    )\n  )\n)\n\nserver <- function(input, output) {\n  output$distPlot <- renderPlot({\n    viz$set_muniplicity(input$muni)\n    viz$get_mean_p_vals()\n    barplot(viz$get_mean_p_vals(), main=viz$get_muniplicity())\n  })\n}\n\nshinyApp(ui = ui, server = server)\n",
+    "created" : 1506609235594.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1379250004",
+    "id" : "E443BB1E",
+    "lastKnownWriteTime" : 1506609246,
+    "last_content_update" : 1506609246415,
+    "path" : "~/lab5/R/lab5.R",
+    "project_path" : "R/lab5.R",
+    "properties" : {
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
