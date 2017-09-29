@@ -1,13 +1,15 @@
 Package: lab5
 Type: Package
-Title: Visual Interaction Tool For Swedish Election Results
+Title: Data Treatment Tool
 Version: 0.1.0
 Author: Simon Jonsson, Fanny Karelius
+URL: https://github.com/SimonJonsson/lab5
 Maintainer: Simon Jonsson <simjo241@liu.se>, Fanny Karelius <fanka300@liu.se>
-Description: Implements an interactive tool for the Swedish election results where you can
-            see the results for each muniplicity. The default select is Stockholms Kommun.
+Description: Implements an RC class that handles the data of the Swedish election results 2014
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
 Depends: R (>= 2.1.0)
 Imports: methods
+Suggests: testthat
+RoxygenNote: 6.0.1
