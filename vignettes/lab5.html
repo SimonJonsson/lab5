@@ -77,7 +77,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>The package is for the purpose of visualizing the 2014 swedish election results. Provides an interactive shiny app where you can select county and the results for the county. Data is collected from <a href="http://www.val.se/val/val2014/statistik/index.html">val.se</a>.</p>
 <div id="general-information" class="section level2">
 <h2>General information</h2>
-<p>Package implements linear regression models, called <strong>linreg</strong> and is called as an example:</p>
+<p>Package implements data handling structure, which takes a URL of the form: “2014_<strong>elect</strong><em>per</em><strong>locality</strong>.xls”</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">viz &lt;-<span class="st"> </span>elect_viz<span class="op">$</span><span class="kw">new</span>(<span class="dt">path =</span> path)</code></pre></div>
 </div>
 <div id="methods" class="section level2">
@@ -94,9 +94,9 @@ viz<span class="op">$</span><span class="kw">get_county</span>()</code></pre></d
 <pre><code>## [1] &quot;Uppsala län&quot;</code></pre>
 <p><strong>get_mean_p_vals()</strong> returns a named vector with the mean p-values for the county</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">viz<span class="op">$</span><span class="kw">get_mean_p_vals</span>()</code></pre></div>
-<pre><code>##     20.08      5.64      6.63      4.55     31.55      6.92         9 
+<pre><code>##         M         C        FP        KD         S         V        MP 
 ## 22.537183  6.828214  6.261111  4.740079 28.454008  6.560833  8.649325 
-##     11.18      2.77      1.68 
+##        SD        FI       OVR 
 ## 10.422619  4.255714  1.290794</code></pre>
 </div>
 

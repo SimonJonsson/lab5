@@ -1,6 +1,6 @@
 ## ---- include = FALSE----------------------------------------------------
 library(lab5)
-path <- "2014_riksdagsval_per_valdistrikt.xls"#read_excel("../data/2014_riksdagsval_per_valdistrikt.xls")
+path <- "2014_riksdagsval_per_valdistrikt.xls"
 
 ## ---- results = "hide"---------------------------------------------------
 viz <- elect_viz$new(path = path)

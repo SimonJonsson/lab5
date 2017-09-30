@@ -15,10 +15,11 @@ elect_viz <- setRefClass(
     initialize = function(path) {
       "Initializes the data set, sets the available counties and
       then selects the first county in the list of counties as the default one"
+
       # Gets the list of possible counties, removes unused indices
-      #path <<- "2014_riksdagsval_per_valdistrikt.xls"
       url <- paste("www.val.se/val/val2014/statistik/",path, sep="")
-      dataaa <- GET(url, write_disk(tdf <- tempfile(fileext = ".xls")))
+      #raw_data <-
+      GET(url, write_disk(tdf <- tempfile(fileext = ".xls")))
       data <<- read_excel(tdf)
 
       data <<- data[-1,] # To remove NA's, we omit row 1

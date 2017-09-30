@@ -10,12 +10,13 @@ vignette: >
 ---
 ```{r, include = FALSE}
 library(lab5)
-path <- "2014_riksdagsval_per_valdistrikt.xls"#read_excel("../data/2014_riksdagsval_per_valdistrikt.xls")
+path <- "2014_riksdagsval_per_valdistrikt.xls"
 ```
 The package is for the purpose of visualizing the 2014 swedish election results. Provides an interactive shiny app where you can select county and the results for the county. Data is collected from [val.se](http://www.val.se/val/val2014/statistik/index.html).
 
 ## General information
-Package implements linear regression models, called **linreg** and is called as an example:
+Package implements data handling structure, which takes a URL of the form: "2014_**elect**_per_**locality**.xls", 
+where **elect** = {riksdagsval, landstingsval, kommunval} and **locality** = {kommun, valdistrikt}
 ```{r, results = "hide"}
 viz <- elect_viz$new(path = path)
 ```
