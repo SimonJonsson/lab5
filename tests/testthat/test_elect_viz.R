@@ -1,6 +1,6 @@
 context("elect_viz")
 library(readxl)
-#data <- read_excel("../../data/2014_riksdagsval_per_valdistrikt.xls")
+
 path <- "2014_riksdagsval_per_valdistrikt.xls"
 test_that("elect_viz rejects bad data", {
   expect_error(viz <- linreg$new(path=iris))
