@@ -1,5 +1,5 @@
 #' An RC class that manages all the data
-#' @field data The input for the visualization in the format of 2014_riksdagsval_per_*.xls
+#' @field path The input path for the visualization in the format of 2014_riksdagsval_per_*.xls
 #' @export elect_viz
 #' @export
 elect_viz <- setRefClass(
@@ -8,13 +8,19 @@ elect_viz <- setRefClass(
     county = "character",
     county_list = "character",
     data = "data.frame",
-    mean_p_vals = "vector"
+    mean_p_vals = "vector",
+    path = "character"
   ),
   methods = list(
-    initialize = function(data) {
+    initialize = function(path) {
       "Initializes the data set, sets the available counties and
       then selects the first county in the list of counties as the default one"
       # Gets the list of possible counties, removes unused indices
+      #path <<- "2014_riksdagsval_per_valdistrikt.xls"
+      url <- paste("www.val.se/val/val2014/statistik/",path, sep="")
+      dataaa <- GET(url, write_disk(tdf <- tempfile(fileext = ".xls")))
+      data <<- read_excel(tdf)
+
       data <<- data[-1,] # To remove NA's, we omit row 1
       county_list <<- unique(data$X__4[c(-1,-2)])
       county <<- county_list[1]
@@ -50,7 +56,7 @@ elect_viz <- setRefClass(
 
       # Returns the names of the different parties and sets it as name for the p-value vector
       names(mean_p_vals) <<- unlist(lapply(seq(9,27,by=2), function(x) {
-        namestr <- strsplit(sheet[[paste("X__", as.character(x), sep="")]][2], " ")
+        namestr <- strsplit(data[[paste("X__", as.character(x), sep="")]][1], " ")
         namestr[[1]][1]
       }))
 

@@ -11,7 +11,7 @@ An RC class that manages all the data
 \section{Fields}{
 
 \describe{
-\item{\code{data}}{The input for the visualization in the format of 2014_riksdagsval_per_*.xls}
+\item{\code{path}}{The input path for the visualization in the format of 2014_riksdagsval_per_*.xls}
 }}
 
 \section{Methods}{
@@ -23,7 +23,7 @@ An RC class that manages all the data
 
 \item{\code{get_mean_p_vals()}}{Returns the mean p-values for the currently selected county}
 
-\item{\code{initialize(data)}}{Initializes the data set, sets the available counties and
+\item{\code{initialize(path)}}{Initializes the data set, sets the available counties and
 then selects the first county in the list of counties as the default one}
 
 \item{\code{set_county(val)}}{Sets the currently selected county}
