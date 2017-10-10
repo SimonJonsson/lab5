@@ -14,7 +14,7 @@ test_that("class is correct", {
 test_that("Setting and getting county works", {
   viz <- elect_viz$new(path=path)
   expect_equal(round(unname(viz$get_mean_p_vals()),2),
-               c(31.54, 4.91, 6.77, 5.24, 25.20, 4.90, 7.80, 9.86, 2.71, 1.05))
+               c(31.55, 4.91, 6.77, 5.23, 25.18, 4.91, 7.81, 9.86, 2.73, 1.05))
 })
 
 test_that("get_county() gives a correct output", {

@@ -13,6 +13,8 @@ elect_viz <- setRefClass(
   ),
   methods = list(
     initialize = function(path) {
+      library(httr)
+      library(readxl)
       "Initializes the data set, sets the available counties and
       then selects the first county in the list of counties as the default one"
 
@@ -44,25 +46,21 @@ elect_viz <- setRefClass(
     get_mean_p_vals = function() {
       "Returns the mean p-values for the currently selected county"
       stopifnot(county %in% county_list)
-      options(warn=-1) # To suppress warnings
 
       # Returns a vector of mean p-values for each the parties
       mean_p_vals <<- lapply(seq(9,27,by=2), function(x) {
-        val <-
-          as.numeric(
-            data[[paste("X__", as.character(x), sep="")]]
-          )
+        val <- data[[paste("X__", as.character(x), sep="")]][-1]
+        val <- as.numeric(val)
         mean(val[data$X__4 == county])
       })
 
       # Returns the names of the different parties and sets it as name for the p-value vector
       names(mean_p_vals) <<- unlist(lapply(seq(9,27,by=2), function(x) {
-        namestr <- strsplit(data[[paste("X__", as.character(x), sep="")]][1], " ")
+        namestr <- strsplit(data[[paste("X__", as.character(9), sep="")]][1], " ")
         namestr[[1]][1]
       }))
 
       mean_p_vals <<- unlist(mean_p_vals)
-      options(warn=0) # Enables warnings again
       return(mean_p_vals)
     }
   )

@@ -23,9 +23,6 @@ An RC class that manages all the data
 
 \item{\code{get_mean_p_vals()}}{Returns the mean p-values for the currently selected county}
 
-\item{\code{initialize(path)}}{Initializes the data set, sets the available counties and
-then selects the first county in the list of counties as the default one}
-
 \item{\code{set_county(val)}}{Sets the currently selected county}
 }}
 

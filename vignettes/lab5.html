@@ -77,7 +77,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>The package is for the purpose of visualizing the 2014 swedish election results. Provides an interactive shiny app where you can select county and the results for the county. Data is collected from <a href="http://www.val.se/val/val2014/statistik/index.html">val.se</a>.</p>
 <div id="general-information" class="section level2">
 <h2>General information</h2>
-<p>Package implements data handling structure, which takes a URL of the form: “2014_<strong>elect</strong><em>per</em><strong>locality</strong>.xls”</p>
+<p>Package implements data handling structure, which takes a URL of the form: “2014_<strong>elect</strong><em>per</em><strong>locality</strong>.xls”, where <strong>elect</strong> = {riksdagsval, landstingsval, kommunval} and <strong>locality</strong> = {kommun, valdistrikt}</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">viz &lt;-<span class="st"> </span>elect_viz<span class="op">$</span><span class="kw">new</span>(<span class="dt">path =</span> path)</code></pre></div>
 </div>
 <div id="methods" class="section level2">
